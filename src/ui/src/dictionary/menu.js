@@ -96,7 +96,7 @@ export default [{
         route: getMenuRoute(modelViews, MENU_MODEL_MANAGEMENT, 'model')
     }, {
         id: MENU_MODEL_TOPOLOGY,
-        i18n: '模型拓扑',
+        i18n: '模型关系',
         icon: 'icon-cc-nav-model-topo',
         route: getMenuRoute(modelViews, MENU_MODEL_TOPOLOGY, 'model')
     }, {
