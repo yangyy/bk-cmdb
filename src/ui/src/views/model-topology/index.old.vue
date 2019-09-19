@@ -13,6 +13,7 @@
                         {{$t('编辑拓扑')}}
                     </bk-button>
                 </span>
+                <router-link :to="{ name: 'modelTopologyNew' }" :style="{ fontSize: '12px' }">新版</router-link>
             </template>
             <template v-else>
                 <bk-button theme="primary" @click="exitEdit">
@@ -83,7 +84,7 @@
                 </li>
             </ul>
         </template>
-        
+
         <bk-sideslider
             :width="slider.width"
             :is-show.sync="slider.isShow"
@@ -435,7 +436,7 @@
                                 y: node.position.y
                             }
                         })
-                        
+
                         this.topoTooltip.hoverNode = null
                         this.topoTooltip.hoverNodeTimer = null
                         this.updateNetwork()

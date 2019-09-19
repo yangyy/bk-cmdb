@@ -42,7 +42,7 @@ export const viewRouters = [
     hosts,
     ...hostDetails,
     modelAssociation,
-    modelTopology,
+    ...modelTopology,
     resource,
     ...template,
     ...generalModel,
