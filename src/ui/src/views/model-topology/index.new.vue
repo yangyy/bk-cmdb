@@ -296,6 +296,7 @@
 
                     minZoom: 0.5,
                     maxZoom: 5,
+                    wheelSensitivity: 0.5,
 
                     // 元素定义，支持promise
                     elements: this.getTopoElements(),
