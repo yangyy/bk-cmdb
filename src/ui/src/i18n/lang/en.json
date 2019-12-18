@@ -536,8 +536,10 @@
     "创建成功": "Created Successfully",
     "请至少选择一项": "Please select at least one",
     "成功上传N条数据": "Successfully uploaded {N} data!",
+    "成功导入N个字段": "{N} fields successfully imported!",
     "上传失败列表": "Upload failed list",
     "更新失败列表": "Update failure list",
+    "新增失败列表": "Added failure list",
     "文件大小溢出": "File size cannot exceed {maxSize}kb",
     "文件格式非法": "The file format is illegal and only {allowType} files can be uploaded!",
     "部分成功": "Partially successful",
@@ -1222,5 +1224,7 @@
     "新建模块": "Create Module",
     "已选实例": "Service Selected",
     "N个": "{ count }",
-    "仅移除服务实例，主机无变更": "Only remove service instances, no host change"
+    "仅移除服务实例，主机无变更": "Only remove service instances, no host change",
+    "导入字段": "Import Field",
+    "第N行字段错误信息": "Line {N}:Field {field}，{info}"
 }
