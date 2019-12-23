@@ -1226,5 +1226,6 @@
     "N个": "{ count }",
     "仅移除服务实例，主机无变更": "Only remove service instances, no host change",
     "导入字段": "Import Field",
-    "第N行字段错误信息": "Line {N}:Field {field}，{info}"
+    "第N行字段错误信息": "Line {N}:Field {field}，{info}",
+    "组织": "Organization"
 }
