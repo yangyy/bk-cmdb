@@ -65,6 +65,7 @@
                                 <component class="form-component"
                                     :is="`cmdb-form-${property.bk_property_type}`"
                                     :class="[property.bk_property_type, { error: errors.has(property.bk_property_id) }]"
+                                    :unit="property.unit"
                                     :options="property.option || []"
                                     :data-vv-name="property.bk_property_id"
                                     :data-vv-as="property.bk_property_name"
@@ -72,8 +73,7 @@
                                     :auto-check="false"
                                     v-validate="$tools.getValidateRules(property)"
                                     v-model.trim="editState.value"
-                                    :ref="`component-${property.bk_property_id}`"
-                                    @enter="confirm">
+                                    :ref="`component-${property.bk_property_id}`">
                                 </component>
                                 <i class="form-confirm bk-icon icon-check-1" @click="confirm"></i>
                                 <i class="form-cancel bk-icon icon-close" @click="exitForm"></i>
@@ -426,7 +426,7 @@
             color: $cmdbDangerColor;
         }
         .form-component {
-            display: inline-block;
+            display: inline-flex;
             vertical-align: middle;
             height: 32px;
             width: 260px;

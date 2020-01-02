@@ -1,10 +1,6 @@
 <template>
     <div class="form-layout">
-        <feature-tips
-            class="process-tips"
-            :show-tips="true"
-            :desc="$t('添加进程提示')">
-        </feature-tips>
+        <cmdb-tips class="process-tips">{{$t('添加进程提示')}}</cmdb-tips>
         <div class="form-groups" ref="formGroups">
             <template v-for="(group, groupIndex) in $sortedGroups">
                 <div class="property-group"
@@ -36,6 +32,7 @@
                                         :is="`cmdb-form-${property['bk_property_type']}`"
                                         :disabled="getPropertyEditStatus(property)"
                                         :class="{ error: errors.has(property['bk_property_id']) }"
+                                        :unit="property['unit']"
                                         :options="property.option || []"
                                         :data-vv-name="property['bk_property_id']"
                                         :data-vv-as="property['bk_property_name']"
@@ -75,12 +72,8 @@
 <script>
     import formMixins from '@/mixins/form'
     import RESIZE_EVENTS from '@/utils/resize-events'
-    import featureTips from '@/components/feature-tips/index'
     import { mapGetters, mapMutations } from 'vuex'
     export default {
-        components: {
-            featureTips
-        },
         mixins: [formMixins],
         props: {
             inst: {

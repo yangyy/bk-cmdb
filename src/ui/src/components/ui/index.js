@@ -30,6 +30,7 @@ import dialog from './dialog/dialog.vue'
 import auth from './auth/auth.vue'
 import tableEmpty from './table-empty/table-empty.vue'
 import list from './form/list.vue'
+import organization from './form/organization.vue'
 import leaveConfirm from './dialog/leave-confirm.vue'
 import user from './user/user.vue'
 const install = (Vue, opts = {}) => {
@@ -67,7 +68,8 @@ const install = (Vue, opts = {}) => {
         tableEmpty,
         list,
         leaveConfirm,
-        user
+        user,
+        organization
     ]
     components.forEach(component => {
         Vue.component(component.name, component)
@@ -107,5 +109,6 @@ export default {
     auth,
     tableEmpty,
     list,
-    leaveConfirm
+    leaveConfirm,
+    organization
 }
