@@ -87,7 +87,16 @@
                 :key="column.id"
                 :prop="column.id"
                 :label="column.name">
-                <template slot-scope="{ row }">{{row[column.id] | formatter(column.property)}}</template>
+                <template slot-scope="{ row }">
+                    <cmdb-form-organization
+                        v-if="column.property.bk_property_type === 'organization'"
+                        :viewonly="true"
+                        :value="row[column.id] || []">
+                    </cmdb-form-organization>
+                    <span v-else>
+                        {{row[column.id] | formatter(column.property)}}
+                    </span>
+                </template>
             </bk-table-column>
             <cmdb-table-empty
                 slot="empty"
@@ -277,7 +286,7 @@
                     this.setTableHeader(),
                     this.setFilterOptions()
                 ])
-                
+
                 // 配合全文检索过滤列表
                 if (this.$route.params.bizName) {
                     this.filter.sendValue = this.$route.params.bizName
