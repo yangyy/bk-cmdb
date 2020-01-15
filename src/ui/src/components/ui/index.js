@@ -34,6 +34,7 @@ import leaveConfirm from './dialog/leave-confirm.vue'
 import user from './user/user.vue'
 import permission from './permission/embed-permission.vue'
 import organization from './form/organization.vue'
+import propertyValue from './other/property-value.vue'
 const install = (Vue, opts = {}) => {
     const components = [
         businessSelector,
@@ -71,7 +72,8 @@ const install = (Vue, opts = {}) => {
         leaveConfirm,
         user,
         permission,
-        organization
+        organization,
+        propertyValue
     ]
     components.forEach(component => {
         Vue.component(component.name, component)
@@ -113,5 +115,6 @@ export default {
     list,
     leaveConfirm,
     permission,
-    organization
+    organization,
+    propertyValue
 }

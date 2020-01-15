@@ -40,14 +40,16 @@
                     </bk-option>
                 </bk-select>
                 <component class="filter-value fl"
-                    v-if="['enum', 'list'].includes(filter.type)"
+                    v-if="['enum', 'list', 'organization'].includes(filter.type)"
                     :is="`cmdb-form-${filter.type}`"
                     :options="$tools.getEnumOptions(properties, filter.id)"
                     :allow-clear="true"
                     :auto-select="false"
                     v-model="filter.value"
+                    :clearable="true"
                     font-size="medium"
-                    @on-selected="handleFilterData">
+                    @on-selected="handleFilterData"
+                    @on-checked="handleFilterData">
                 </component>
                 <bk-input class="filter-value cmdb-form-input fl" type="text" maxlength="11"
                     v-else-if="filter.type === 'int'"
@@ -88,14 +90,10 @@
                 :prop="column.id"
                 :label="column.name">
                 <template slot-scope="{ row }">
-                    <cmdb-form-organization
-                        v-if="column.property.bk_property_type === 'organization'"
-                        :viewonly="true"
-                        :value="row[column.id] || []">
-                    </cmdb-form-organization>
-                    <span v-else>
-                        {{row[column.id] | formatter(column.property)}}
-                    </span>
+                    <cmdb-property-value
+                        :value="row[column.id]"
+                        :property="column.property">
+                    </cmdb-property-value>
                 </template>
             </bk-table-column>
             <cmdb-table-empty
