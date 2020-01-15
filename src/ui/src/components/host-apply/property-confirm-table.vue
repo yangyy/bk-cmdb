@@ -287,7 +287,8 @@
 <style lang="scss">
     .table-cell-change-value {
         .cell {
-            -webkit-line-clamp: 3;
+            -webkit-line-clamp: unset !important;
+            display: block !important;
             .conflict-item,
             .conflict-separator {
                 color: #ea3536;
