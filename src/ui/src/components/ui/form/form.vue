@@ -222,34 +222,35 @@
 </script>
 
 <style lang="scss" scoped>
-    .form-layout{
+    .form-layout {
         height: 100%;
         @include scrollbar-y;
     }
-    .form-groups{
+    .form-groups {
         padding: 0 0 0 32px;
     }
-    .property-group{
+    .property-group {
         padding: 7px 0 10px 0;
         &:first-child{
             padding: 28px 0 10px 0;
         }
     }
-    .group-name{
+    .group-name {
         font-size: 14px;
         line-height: 14px;
         color: #333948;
         overflow: visible;
     }
-    .property-list{
+    .property-list {
         padding: 4px 0;
         display: flex;
         flex-wrap: wrap;
-        .property-item{
+        .property-item {
+            width: 50%;
             margin: 12px 0 0;
             padding: 0 54px 0 0;
             font-size: 12px;
-            flex: 0 0 50%;
+            flex: 0 1 auto;
             .property-name{
                 display: block;
                 margin: 6px 0 10px;
@@ -257,7 +258,7 @@
                 line-height: 16px;
                 font-size: 0;
             }
-            .property-name-text{
+            .property-name-text {
                 position: relative;
                 display: inline-block;
                 max-width: calc(100% - 20px);
@@ -274,7 +275,7 @@
                     color: #ff5656;
                 }
             }
-            .property-name-tooltips{
+            .property-name-tooltips {
                 display: inline-block;
                 vertical-align: middle;
                 width: 16px;
@@ -282,7 +283,7 @@
                 font-size: 16px;
                 color: #c3cdd7;
             }
-            .property-value{
+            .property-value {
                 font-size: 0;
                 position: relative;
                 /deep/ .control-append-group {
@@ -293,7 +294,7 @@
             }
         }
     }
-    .form-options{
+    .form-options {
         position: sticky;
         bottom: 0;
         left: 0;
@@ -306,11 +307,11 @@
             background-color: #fff;
             z-index: 100;
         }
-        .button-save{
+        .button-save {
             min-width: 76px;
             margin-right: 4px;
         }
-        .button-cancel{
+        .button-cancel {
             min-width: 76px;
             margin: 0 4px;
             background-color: #fff;
