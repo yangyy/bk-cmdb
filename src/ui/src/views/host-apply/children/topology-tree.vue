@@ -473,9 +473,6 @@
               &.is-selected {
                   background-color: #3a84ff;
               }
-              &.is-leaf-icon {
-                  margin-left: 2px;
-              }
           }
           .config-icon {
               position: relative;
